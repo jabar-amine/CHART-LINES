@@ -19,6 +19,7 @@ dim DRAW_FORMAT_LEFT As New StringFormat()
 DRAW_FORMAT_LEFT.Alignment = StringAlignment.Near
 Dim foundRows_statistiques() As Data.DataRow
 Dim COL_COUNT_STEP As New Collection
+Dim HAUTEUR As Integer = 30
 
 ////////////////////////////////////////////////////
 
