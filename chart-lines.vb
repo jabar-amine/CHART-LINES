@@ -17,6 +17,8 @@ Dim ID_LOADING_DATA As Integer = 0
 Dim IMG_INFOS_DATA As Image
 dim DRAW_FORMAT_LEFT As New StringFormat()
 DRAW_FORMAT_LEFT.Alignment = StringAlignment.Near
+Dim foundRows_statistiques() As Data.DataRow
+Dim COL_COUNT_STEP As New Collection
 
 ////////////////////////////////////////////////////
 
@@ -38,7 +40,22 @@ Sub CHARGER_INFOS_DATA(ByVal MyThread As System.ComponentModel.BackgroundWorker,
         ////////
         LOAD DATA FROM YOUR DATABASE
         ************
-
+        Example : Json [
+        {"age":"0","maleCount":"1","femaleCount":"0"},
+        {"age":"2","maleCount":"5","femaleCount":"5"},
+        {"age":"3","maleCount":"17","femaleCount":"17"},
+        {"age":"4","maleCount":"26","femaleCount":"21"},
+        {"age":"5","maleCount":"41","femaleCount":"31"},
+        {"age":"6","maleCount":"36","femaleCount":"27"},
+        {"age":"7","maleCount":"40","femaleCount":"28"},
+        {"age":"8","maleCount":"28","femaleCount":"18"},
+        {"age":"9","maleCount":"13","femaleCount":"9"},
+        {"age":"10","maleCount":"10","femaleCount":"8"},
+        {"age":"11","maleCount":"0","femaleCount":"7"}
+        ]
+        
+        foundRows_statistiques = (Convert Json to DataRow)
+      
         ////////
 End Sub
 
