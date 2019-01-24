@@ -3,7 +3,7 @@
 BGW_INFOS : is a Backgroundworker
 PIC_INFOS_DATA : is a Picturebox
 TIMER_PROGRES : is a Timer
-
+Form1.FONT_CHIFFRE.Font : / Arial; 9,75pt; style=Bold /
 //******//
 
 Some other functions in (functions.vb)
