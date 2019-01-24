@@ -282,6 +282,17 @@ End Function
         Return S
     End Function
 
+    Function GET_POSITION_Y(ByVal points As Point(), ByVal position_x As Integer) As Integer
+        Dim res As Integer = 0
+        For Each P As Point In points
+            If P.X = position_x Then
+                res = P.Y
+                Exit For
+            End If
+        Next
+        Return res
+    End Function
+
 
 
 
