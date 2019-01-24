@@ -33,7 +33,7 @@ End Sub
 
 Private Sub BGW_INFOS_RunWorkerCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BGW_INFOS.RunWorkerCompleted
         TIMER_PROGRES.Stop()
-        SHOW_IMAGE_INFOS_DATA(ID_SHOW)
+        SHOW_IMAGE_INFOS_DATA()
 End Sub
 
 Sub CHARGER_INFOS_DATA(ByVal MyThread As System.ComponentModel.BackgroundWorker, ByVal e As System.ComponentModel.DoWorkEventArgs)
@@ -72,16 +72,14 @@ Sub SHOW_PROGRESSION()
         PIC_INFOS_DATA.Image = DRAW_PROGRESSION_LOADING(ID_LOADING_DATA, Color.FromArgb(126, 167, 236), Color.FromArgb(169, 219, 38), Color.FromArgb(254, 205, 10), 100)
 End Sub
 
-Sub SHOW_IMAGE_INFOS_DATA(ByVal ID_PART As Integer)
+Sub SHOW_IMAGE_INFOS_DATA()
         PIC_INFOS_DATA.SizeMode = PictureBoxSizeMode.Normal
         Dim ROWS_DATA() As Data.DataRow
-
-        If ID_PART = 1 Then
-            DESC_PAGE.Text = "L'EFFECTIF DES ÉLÈVES"
-            IMG_INFOS_DATA = GET_IMAGE_MENU_ITEM(Image.FromStream(New MemoryStream(GLOBALE_IMG_CHART_SEXE)), "L'EFFECTIF DES ÉLÈVES", PIC_INFOS_DATA.Width, GET_IMAGE_EFFICTIVES)
-            ADD_IMAGE(IMG_INFOS_DATA, SHOW_LINES_EFFECTIVE(PIC_INFOS_DATA.Height - 40, PIC_INFOS_DATA.Width), False)
-        End If
-
+      
+        DESC_PAGE.Text = "L'EFFECTIF DES ÉLÈVES"
+        IMG_INFOS_DATA = GET_IMAGE_MENU_ITEM(Image.FromStream(New MemoryStream(GLOBALE_IMG_CHART_SEXE)), "L'EFFECTIF DES ÉLÈVES", PIC_INFOS_DATA.Width, GET_IMAGE_EFFICTIVES)
+        ADD_IMAGE(IMG_INFOS_DATA, SHOW_LINES_EFFECTIVE(PIC_INFOS_DATA.Height - 40, PIC_INFOS_DATA.Width), False)
+      
         PIC_INFOS_DATA.Image = IMG_INFOS_DATA
 End Sub
 
